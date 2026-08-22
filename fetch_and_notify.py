@@ -2,6 +2,8 @@ import os
 import json
 import smtplib
 from datetime import datetime, timezone, timedelta
+
+IST = timezone(timedelta(hours=5, minutes=30))
 from email.mime.text import MIMEText
 
 import requests
@@ -110,10 +112,11 @@ def main():
 
             if window - TOLERANCE <= time_until <= window:
                 subject = f"Reminder: {contest.get('event', 'Contest')} starts in ~{label}"
+                start_ist = start.astimezone(IST)
                 body = (
                     f"Contest: {contest.get('event')}\n"
                     f"Resource: {contest.get('resource')}\n"
-                    f"Starts at: {start.isoformat()}\n"
+                    f"Starts at: {start_ist.strftime('%Y-%m-%d %I:%M %p IST')}\n"
                     f"Link: {contest.get('href')}\n"
                 )
                 send_email(subject, body)
