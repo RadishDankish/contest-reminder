@@ -25,7 +25,7 @@
   },
   "70373073": {
     "sent_24h": false,
-    "sent_6h": false
+    "sent_6h": true
   },
   "70471347": {
     "sent_24h": false,
@@ -44,10 +44,6 @@
     "sent_6h": false
   },
   "70563385": {
-    "sent_24h": false,
-    "sent_6h": false
-  },
-  "70563386": {
     "sent_24h": false,
     "sent_6h": false
   },
